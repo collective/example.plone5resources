@@ -1,0 +1,10 @@
+/* bundle less file that will be compiled */
+/* Example less file that is included from a bundle less file */
+.example-element {
+  padding: 20px;
+  font-size: 20px;
+}
+.example-element {
+  color: orange;
+}
+/*# sourceMappingURL=bundle.css.map */

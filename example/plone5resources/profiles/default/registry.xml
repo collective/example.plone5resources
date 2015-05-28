@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<registry>
+
+  <!-- Example resources that have requirejs define blocks -->
+  <records prefix="plone.resources/example-dependency1"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++plone++plone5resources/dependency1.js</value>
+     <value key="css">
+        <element>++plone++plone5resources/dependency1.less</element>
+     </value>
+  </records>
+  <records prefix="plone.resources/example-dependency2"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++plone++plone5resources/dependency2.js</value>
+     <value key="css">
+        <element>++plone++plone5resources/dependency2.less</element>
+     </value>
+  </records>
+
+  <!-- example resource that does not use RequireJS define or require
+       so you can see how to just include a traditional script -->
+  <records prefix="plone.resources/example-justinclude"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++plone++plone5resources/justinclude.js</value>
+  </records>
+
+  <!-- example legacy resource. Do not build -->
+  <records prefix="plone.resources/example-legacy"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++plone++plone5resources/legacy.js</value>
+  </records>
+
+
+  <!-- Example bundle resource. This is a file that will define a
+       require method(requirejs) and be built -->
+  <records prefix="plone.resources/example-bundle"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++plone++plone5resources/bundle.js</value>
+     <value key="css">
+        <element>++plone++plone5resources/bundle.less</element>
+     </value>
+  </records>
+
+
+  <!-- create a bundle definition -->
+  <records prefix="plone.bundles/example-bundle"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>example-bundle</element>
+      <element>example-justinclude</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="jscompilation">++plone++plone5resources/bundle.min.js</value>
+    <value key="csscompilation">++plone++plone5resources/bundle.css</value>
+    <value key="last_compilation">2015-05-28 00:00:00</value>
+  </records>
+
+  <!-- create a legacy bundle. These are just a sequence of files -->
+  <records prefix="plone.bundles/example-legacy"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>example-legacy</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="compile">False</value>
+    <value key="jscompilation">++plone++plone5resources/legacy.min.js</value>
+    <value key="csscompilation">++plone++plone5resources/legacy.css</value>
+    <value key="last_compilation">2015-05-28 00:00:00</value>
+  </records>
+</registry>
