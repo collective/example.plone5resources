@@ -20,8 +20,8 @@ copy the data from the built js/css back into your product or
 proceed to the next step.
 
 
-File system
-~~~~~~~~~~~
+CLI build tool
+~~~~~~~~~~~~~~
 
 Plone 5 include a couple nice command line build script for you to use
 with your bundles. To build the bundle provided in this pacakge
@@ -32,3 +32,10 @@ with the command line scripts, the process is:
 3. shutdown plone
 4. then run the command: `./bin/plone-compile-resources --site-id=Plone4 --bundle=example-bundle`
 
+
+Caveats
+-------
+
+If you're building with the command line, please beware of a bunch that was fixed in master: https://github.com/plone/Products.CMFPlone/commit/99d5952f4329504cc60120562f746f37b045880b
+
+If you have issues building with the CLI tool, you'll need to checkout master of Products.CMFPlone and use that.
