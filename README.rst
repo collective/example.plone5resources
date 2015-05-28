@@ -25,10 +25,10 @@ File system
 
 Plone 5 include a couple nice command line build script for you to use
 with your bundles. To build the bundle provided in this pacakge
-with the command line scripts, the process is::
+with the command line scripts, the process is:
 
- 1. create a Plone site and give it an id
- 2. install the example.plone5resources package
- 3. shutdown plone
- 4. then run the command: `./bin/plone-compile-resources --site-id=Plone4 --bundle=example-bundle`
+1. create a Plone site and give it an id
+2. install the example.plone5resources package
+3. shutdown plone
+4. then run the command: `./bin/plone-compile-resources --site-id=Plone4 --bundle=example-bundle`
 
